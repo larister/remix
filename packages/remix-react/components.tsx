@@ -254,7 +254,6 @@ function usePrefetchBehavior<T extends HTMLAnchorElement>(
       };
       let observer = new IntersectionObserver(callback, { threshold: 0.5 });
       if (ref.current) observer.observe(ref.current);
-      else console.warn("No element to observe");
 
       return () => {
         observer.disconnect();
@@ -349,8 +348,6 @@ let Link = React.forwardRef<HTMLAnchorElement, RemixLinkProps>(
       prefetch,
       props
     );
-
-    console.log({ ref: ref.current, forwardedRef });
 
     return (
       <>
