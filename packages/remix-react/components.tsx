@@ -247,7 +247,6 @@ function usePrefetchBehavior<T extends HTMLAnchorElement>(
 
     if (prefetch === "viewport") {
       let callback: IntersectionObserverCallback = (entries) => {
-        console.log("entries", entries);
         entries.forEach((entry) => {
           if (entry.isIntersecting) setShouldPrefetch(true);
         });
